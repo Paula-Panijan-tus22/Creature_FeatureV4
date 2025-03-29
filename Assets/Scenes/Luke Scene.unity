@@ -6680,6 +6680,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 440416503}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &500688444 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3756349941812908085, guid: f787b22d195534f4cb2d9e6f9379954d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1909744993792132694}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &506366747
 GameObject:
   m_ObjectHideFlags: 0
@@ -17301,7 +17307,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _handGrabState: {fileID: 1958984163}
-  _syntheticHand: {fileID: 0}
+  _syntheticHand: {fileID: 140697126}
 --- !u!1 &1502418605
 GameObject:
   m_ObjectHideFlags: 0
@@ -19793,6 +19799,18 @@ MonoBehaviour:
       - m_Target: {fileID: 477813992}
         m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
         m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1750314169}
+        m_TargetAssemblyTypeName: fruitSpawnScript, Assembly-CSharp
+        m_MethodName: makeFruit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -24567,7 +24585,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _handGrabState: {fileID: 1621247413}
-  _syntheticHand: {fileID: 0}
+  _syntheticHand: {fileID: 1640235675}
 --- !u!1 &2099179450
 GameObject:
   m_ObjectHideFlags: 0
@@ -25248,7 +25266,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3756349941812908085, guid: f787b22d195534f4cb2d9e6f9379954d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1909744993792132700}
   m_SourcePrefab: {fileID: 100100000, guid: f787b22d195534f4cb2d9e6f9379954d, type: 3}
 --- !u!4 &1909744993792132695 stripped
 Transform:
@@ -25256,6 +25278,34 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1909744993792132694}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1909744993792132700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 500688444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f07503827871d74198a5c81b83d29e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnFruit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1750314169}
+        m_TargetAssemblyTypeName: fruitSpawnScript, Assembly-CSharp
+        m_MethodName: makeFruit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  Player: {fileID: 1331186601}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

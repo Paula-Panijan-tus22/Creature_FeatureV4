@@ -17,8 +17,14 @@ public class fruitSpawnScript : MonoBehaviour
         GameObject currentFruit = GameObject.Find("Fruit");
         if (currentFruit = null)
         {
+            Debug.Log("no fruit in scene");
             Instantiate(fruitGO);
         }
         currentFruit = null;
+    }
+
+    public void makeFruit()
+    {
+        Instantiate(fruitGO, transform.position , transform.rotation);
     }
 }
