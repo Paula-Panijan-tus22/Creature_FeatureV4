@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class hatSpawner : MonoBehaviour
 {
-    public GameObject objectToSpawn;  // Assign the prefab to spawn in the Inspector
+    public GameObject objectPrefab;  // Assign the prefab in the Inspector
     public Transform spawnPoint;  // Assign the spawn location in the Inspector
 
-    public void SpawnObject()
+    private GameObject spawnedObject;  // Stores reference to the spawned object
+
+    public void ToggleObject()
     {
-        if (objectToSpawn != null && spawnPoint != null)
+        if (spawnedObject == null)  // If no object exists, spawn it
         {
-            Instantiate(objectToSpawn, spawnPoint.position, spawnPoint.rotation);
+            spawnedObject = Instantiate(objectPrefab, spawnPoint.position, spawnPoint.rotation);
         }
-        else
+        else  // If object exists, destroy it
         {
-            Debug.LogError("Object or Spawn Point not assigned in ObjectSpawner!");
+            Destroy(spawnedObject);
+            spawnedObject = null;  // Reset reference
         }
     }
-
 }

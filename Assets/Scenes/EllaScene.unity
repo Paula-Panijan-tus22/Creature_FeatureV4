@@ -573,7 +573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e0f77f1b8bd25f4691714021aff42a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 8139656045722087678, guid: 2dd339cf21fd0084996e2773b4a88327,
+  objectPrefab: {fileID: 8139656045722087678, guid: 2dd339cf21fd0084996e2773b4a88327,
     type: 3}
   spawnPoint: {fileID: 1856088132}
 --- !u!4 &2102197578
@@ -3017,7 +3017,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2102197577}
         m_TargetAssemblyTypeName: hatSpawner, Assembly-CSharp
-        m_MethodName: SpawnObject
+        m_MethodName: ToggleObject
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
