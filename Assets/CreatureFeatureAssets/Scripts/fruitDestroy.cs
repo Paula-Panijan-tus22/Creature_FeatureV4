@@ -10,7 +10,7 @@ public class fruitDestroy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Player = GameObject.Find("[BuildingBlock] Camera Rig");
+        Player = GameObject.Find("OVRCameraRig");
     }
 
     // Update is called once per frame
@@ -18,7 +18,7 @@ public class fruitDestroy : MonoBehaviour
     {
         if (Player == null)
         {
-            Player = GameObject.Find("[BuildingBlock] Camera Rig");
+            Player = GameObject.Find("OVRCameraRig");
         }
         Debug.Log(Vector3.Distance(Player.transform.position, transform.position));
         if (Vector3.Distance(Player.transform.position, transform.position) > 2)
