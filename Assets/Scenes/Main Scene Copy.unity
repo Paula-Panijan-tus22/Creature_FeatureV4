@@ -15524,25 +15524,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3260663876943873127, guid: f787b22d195534f4cb2d9e6f9379954d,
-        type: 3}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 7079690332789717180}
-    - target: {fileID: 3260663876943873127, guid: f787b22d195534f4cb2d9e6f9379954d,
-        type: 3}
-      propertyPath: spawnFruit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 634784274}
     - target: {fileID: 3756349941812908085, guid: f787b22d195534f4cb2d9e6f9379954d,
         type: 3}
       propertyPath: m_Name
       value: Fruit
-      objectReference: {fileID: 0}
-    - target: {fileID: 3756349941812908085, guid: f787b22d195534f4cb2d9e6f9379954d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
