@@ -17,14 +17,13 @@ public class fruitSpawnScript : MonoBehaviour
         GameObject currentFruit = GameObject.Find("Fruit");
         if (currentFruit = null)
         {
-            Debug.Log("no fruit in scene");
-            Instantiate(fruitGO);
         }
         currentFruit = null;
     }
 
     public void makeFruit()
     {
-        Instantiate(fruitGO, transform.position , transform.rotation);
+        fruitGO.transform.position = new Vector3(0, 0, 0);
+        fruitGO.transform.rotation = Quaternion.identity;
     }
 }

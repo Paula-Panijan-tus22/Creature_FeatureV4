@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3455648477281140325}
   - component: {fileID: 8269364406787152058}
   - component: {fileID: 8709179297310258181}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: '[BuildingBlock] HandGrab'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: f8766c17-aaf8-4b55-9431-de8deea83842
-  instanceId: 624dfe28-2c06-41d0-abd7-d96b777d8a6f
+  instanceId: 7183f72d-29d6-4875-8ad7-935fcede365b
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: f8338144-8280-4ff6-9455-ae2bb9c20fe8

@@ -16,10 +16,14 @@ public class eatFruitScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.layer == 3)
+        if(collision.gameObject.GetComponent<fruitDestroy>())
         {
             happy.Invoke();
             Destroy(collision.gameObject);
+            collision = null;
+        } else
+        {
+            Debug.Log("not fruit");
         }
     }
 
