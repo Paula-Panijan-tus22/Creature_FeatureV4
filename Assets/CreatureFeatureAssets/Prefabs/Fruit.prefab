@@ -154,7 +154,7 @@ GameObject:
   - component: {fileID: 66894306080969174}
   - component: {fileID: 5550570917492476152}
   - component: {fileID: 3495047076729089131}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Fruit
   m_TagString: Untagged
   m_Icon: {fileID: 0}

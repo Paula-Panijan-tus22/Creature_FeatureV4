@@ -19,7 +19,6 @@ public class eatFruitScript : MonoBehaviour
         if(collision.gameObject.GetComponent<fruitDestroy>())
         {
             happy.Invoke();
-            Destroy(collision.gameObject);
             collision = null;
         } else
         {
