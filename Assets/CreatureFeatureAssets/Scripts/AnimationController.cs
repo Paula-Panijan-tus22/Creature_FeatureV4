@@ -13,33 +13,33 @@ public class AnimationController : MonoBehaviour
 
     public void Dance()
     {
-        animator.SetBool("isDancing", true);
-        animator.SetBool("isWaving", false);
-        animator.SetBool("isSitting", false);
-        animator.SetBool("isSpinning", false);
+        ResetAllTriggers();
+        animator.SetTrigger("Dance");
     }
 
     public void Wave()
     {
-        animator.SetBool("isWaving", true);
-        animator.SetBool("isDancing", false);
-        animator.SetBool("isSitting", false);
-        animator.SetBool("isSpinning", false);
+        ResetAllTriggers();
+        animator.SetTrigger("Wave");
     }
 
     public void SitDown()
     {
-        animator.SetBool("isSitting", true);
-        animator.SetBool("isDancing", false);
-        animator.SetBool("isWaving", false);
-        animator.SetBool("isSpinning", false);
+        ResetAllTriggers();
+        animator.SetTrigger("Sit");
     }
 
     public void Spin()
     {
-        animator.SetBool("isDancing", false);
-        animator.SetBool("isSpinning", true);
-        animator.SetBool("isWaving", false);
-        animator.SetBool("isSitting", false);
+        ResetAllTriggers();
+        animator.SetTrigger("Spin");
+    }
+
+    private void ResetAllTriggers()
+    {
+        animator.ResetTrigger("Dance");
+        animator.ResetTrigger("Wave");
+        animator.ResetTrigger("Sit");
+        animator.ResetTrigger("Spin");
     }
 }
