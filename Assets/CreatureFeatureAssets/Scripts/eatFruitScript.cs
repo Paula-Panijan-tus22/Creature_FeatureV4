@@ -29,7 +29,7 @@ public class eatFruitScript : MonoBehaviour
     void Update()
     {
         countdown_ -= Time.deltaTime;
-        if (countdown_ > 0 && !thinkingOfFruit)
+        if (countdown_ < 0 && !thinkingOfFruit)
         {
             thinkOfFruit();
         }
@@ -38,6 +38,7 @@ public class eatFruitScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log("collided");
         if (thinkingOfFruit)
         {
             if (collision.gameObject.GetComponent<FRUITSCRIPT>())
