@@ -13,6 +13,7 @@ public class hatSpawner : MonoBehaviour
         if (spawnedObject == null)  // If no object exists, spawn it
         {
             spawnedObject = Instantiate(objectPrefab, spawnPoint.position, spawnPoint.rotation);
+            spawnedObject.transform.SetParent(spawnPoint);  // Parent it to the spawnPoint
         }
         else  // If object exists, destroy it
         {

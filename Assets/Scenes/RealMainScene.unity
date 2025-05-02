@@ -44776,7 +44776,7 @@ Transform:
   m_GameObject: {fileID: 1907881055}
   serializedVersion: 2
   m_LocalRotation: {x: 0.000000010244548, y: -1.4586169e-11, z: 2.7103918e-12, w: 1}
-  m_LocalPosition: {x: 0, y: 0.015100565, z: -0.00084402604}
+  m_LocalPosition: {x: -0, y: 0.01916, z: 0.00399}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45020,7 +45020,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: f92d0d24ca84b3d4395d521fe555bb20,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.008
+      value: -0.078
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f92d0d24ca84b3d4395d521fe555bb20,
         type: 3}
@@ -45030,7 +45030,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: f92d0d24ca84b3d4395d521fe555bb20,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.415
+      value: 0.99
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f92d0d24ca84b3d4395d521fe555bb20,
         type: 3}
@@ -45114,7 +45114,7 @@ PrefabInstance:
       addedObject: {fileID: 1934089704}
     - targetCorrespondingSourceObject: {fileID: -3321919801592875672, guid: f92d0d24ca84b3d4395d521fe555bb20,
         type: 3}
-      insertIndex: -1
+      insertIndex: 0
       addedObject: {fileID: 1907881056}
     - targetCorrespondingSourceObject: {fileID: 8700783698680967558, guid: f92d0d24ca84b3d4395d521fe555bb20,
         type: 3}
@@ -45133,6 +45133,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1922161255}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f92d0d24ca84b3d4395d521fe555bb20,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1922161257}
     - targetCorrespondingSourceObject: {fileID: -6638854969539935569, guid: f92d0d24ca84b3d4395d521fe555bb20,
         type: 3}
       insertIndex: -1
@@ -45195,6 +45199,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfba2d435a8815b449ff2b3a497c2006, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  danceClip: {fileID: 8300000, guid: 4aab78346a97b444fbb3d1a0b9a320ba, type: 3}
+  waveClip: {fileID: 8300000, guid: 358b62b9a7807dd46b71fe801339c222, type: 3}
+  spinClip: {fileID: 8300000, guid: fe14b2fe57dc4244f88c6bb4bcdedcd3, type: 3}
 --- !u!114 &1922161251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45262,6 +45269,102 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.04484374, y: 0.088621736, z: 0.03793943}
   m_Center: {x: 0.00033427626, y: 0.044078555, z: -0.00020656288}
+--- !u!82 &1922161257
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922161248}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1923289602
 GameObject:
   m_ObjectHideFlags: 0
@@ -49213,7 +49316,7 @@ PrefabInstance:
     - target: {fileID: 4969061567246518261, guid: 9fca4ceeb3426b44ebe3bc5c49277439,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.0001
       objectReference: {fileID: 0}
     - target: {fileID: 4969061567246518261, guid: 9fca4ceeb3426b44ebe3bc5c49277439,
         type: 3}
@@ -49223,7 +49326,7 @@ PrefabInstance:
     - target: {fileID: 4969061567246518261, guid: 9fca4ceeb3426b44ebe3bc5c49277439,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.0001
       objectReference: {fileID: 0}
     - target: {fileID: 4969061567246518261, guid: 9fca4ceeb3426b44ebe3bc5c49277439,
         type: 3}
@@ -49825,7 +49928,7 @@ MonoBehaviour:
         m_MethodName: ToggleObject
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 4273851229352053565, guid: b3b45c9c43a911147982dc6c0b5f503d,
+          m_ObjectArgument: {fileID: 919132149155446097, guid: 5f6ae4e296e3abc44ae574316a1d330e,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
@@ -50047,7 +50150,7 @@ Transform:
   m_GameObject: {fileID: 2871261343750271478}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.147, y: -0.059, z: 0.594}
+  m_LocalPosition: {x: -0.644, y: 0.14, z: 0.594}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

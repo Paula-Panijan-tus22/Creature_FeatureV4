@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f887d9785e73dc747a4484fedb84c5de
+guid: 5f6ae4e296e3abc44ae574316a1d330e
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,18 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: phong1
-    second: {fileID: 2100000, guid: d841adcba7aeecf47ae90419dfd4204e, type: 2}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: crown_crown_BaseColor
-    second: {fileID: 2800000, guid: cdd906af207814e45bf18a824cce4ebd, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: crown_crown_Normal
-    second: {fileID: 2800000, guid: 22bbbddcf6f93ee4a92271eb24c8d1b0, type: 3}
+      name: standardSurface1
+    second: {fileID: 2100000, guid: 36dde9fec051ae04daf437c4db5fb59c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -50,7 +40,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.7
+    globalScale: 3
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -105,7 +95,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.7
+    globalScale: 0.03
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
