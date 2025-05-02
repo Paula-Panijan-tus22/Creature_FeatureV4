@@ -19,7 +19,7 @@ public class FRUITSCRIPT : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(Player.transform.position, transform.position) > 2)
+        if (Vector3.Distance(Player.transform.position, transform.position) > 2 || transform.position.y < 0.05f)
         {
             Respawn();
         }
