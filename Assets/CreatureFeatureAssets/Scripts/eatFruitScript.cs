@@ -11,11 +11,15 @@ public class eatFruitScript : MonoBehaviour
     public GameObject appleSprite;
     public GameObject orangeSprite;
     public GameObject pearSprite;
+
+    public AudioClip happySound;
+    public AudioClip sadSound;
+    private AudioSource audioSource;
+
     private float countdown_;
     private bool thinkingOfFruit;
     private int whichFruit;
 
-    // Start is called before the first frame update
     void Start()
     {
         thoughtCloud.SetActive(false);
@@ -24,6 +28,12 @@ public class eatFruitScript : MonoBehaviour
         pearSprite.SetActive(false);
         countdown_ = 20;
         thinkingOfFruit = false;
+
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
     }
 
     void Update()
@@ -33,7 +43,6 @@ public class eatFruitScript : MonoBehaviour
         {
             thinkOfFruit();
         }
-
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -41,47 +50,34 @@ public class eatFruitScript : MonoBehaviour
         Debug.Log("collided");
         if (thinkingOfFruit)
         {
-            if (collision.gameObject.GetComponent<FRUITSCRIPT>())
+            var fruit = collision.gameObject.GetComponent<FRUITSCRIPT>();
+            if (fruit)
             {
-                if (whichFruit == 1)
+                bool correctFruit = false;
+
+                if (whichFruit == 1 && fruit.isApple) correctFruit = true;
+                else if (whichFruit == 2 && fruit.isOrange) correctFruit = true;
+                else if (whichFruit == 3 && fruit.isPear) correctFruit = true;
+
+                if (correctFruit)
                 {
-                    if (collision.gameObject.GetComponent<FRUITSCRIPT>().isApple)
-                    {
-                        happy.Invoke();
-                    } else
-                    {
-                        sad.Invoke();
-                    }
+                    happy.Invoke();
+                    PlaySound(happySound);
                 }
-                else if (whichFruit == 2)
+                else
                 {
-                    if (collision.gameObject.GetComponent<FRUITSCRIPT>().isOrange)
-                    {
-                        happy.Invoke();
-                    }
-                    else
-                    {
-                        sad.Invoke();
-                    }
+                    sad.Invoke();
+                    PlaySound(sadSound);
                 }
-                else if (whichFruit == 3)
-                {
-                    if (collision.gameObject.GetComponent<FRUITSCRIPT>().isPear)
-                    {
-                        happy.Invoke();
-                    }
-                    else
-                    {
-                        sad.Invoke();
-                    }
-                }
-                countdown_ = Random.Range(15,25);
+
+                countdown_ = Random.Range(15, 25);
                 thoughtCloud.SetActive(false);
                 appleSprite.SetActive(false);
                 orangeSprite.SetActive(false);
                 pearSprite.SetActive(false);
                 thinkingOfFruit = false;
-                collision.gameObject.GetComponent<FRUITSCRIPT>().Respawn();
+
+                fruit.Respawn();
             }
             else
             {
@@ -93,17 +89,18 @@ public class eatFruitScript : MonoBehaviour
     private void thinkOfFruit()
     {
         thinkingOfFruit = true;
-        whichFruit = Random.Range(1, 3);
+        whichFruit = Random.Range(1, 4); // Fix range to include 3
         thoughtCloud.SetActive(true);
-        if (whichFruit == 1)
+        appleSprite.SetActive(whichFruit == 1);
+        orangeSprite.SetActive(whichFruit == 2);
+        pearSprite.SetActive(whichFruit == 3);
+    }
+
+    private void PlaySound(AudioClip clip)
+    {
+        if (clip != null && audioSource != null)
         {
-            appleSprite.SetActive(true);
-        } else if (whichFruit == 2)
-        {
-            orangeSprite.SetActive(true);
-        } else if(whichFruit == 3)
-        {
-            pearSprite.SetActive(true);
+            audioSource.PlayOneShot(clip);
         }
     }
 }
