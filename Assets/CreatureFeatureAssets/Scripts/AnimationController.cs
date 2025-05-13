@@ -11,6 +11,7 @@ public class AnimationController : MonoBehaviour
     public AudioClip danceClip;
     public AudioClip waveClip;
     public AudioClip spinClip;
+    public AudioClip purrClip;
 
     [Header("Action Cooldown")]
     [Tooltip("Time in seconds before another action can be triggered")]
@@ -18,10 +19,38 @@ public class AnimationController : MonoBehaviour
 
     private float lastActionTime = -Mathf.Infinity;
 
+    private bool hasPurred = false;
+
     void Awake()
     {
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Hand"))
+        {
+            // Stop any current audio and play purr sound in loop
+            audioSource.Stop();
+            audioSource.clip = purrClip;
+            audioSource.loop = true;
+            audioSource.Play();
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Hand"))
+        {
+            // Stop purring when hand exits
+            if (audioSource.clip == purrClip)
+            {
+                audioSource.Stop();
+                audioSource.loop = false;
+                audioSource.clip = null;
+            }
+        }
     }
 
     public void Dance()
