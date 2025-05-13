@@ -12,6 +12,12 @@ public class AnimationController : MonoBehaviour
     public AudioClip waveClip;
     public AudioClip spinClip;
 
+    [Header("Action Cooldown")]
+    [Tooltip("Time in seconds before another action can be triggered")]
+    public float actionCooldown = 2f;
+
+    private float lastActionTime = -Mathf.Infinity;
+
     void Awake()
     {
         animator = GetComponent<Animator>();
@@ -20,29 +26,45 @@ public class AnimationController : MonoBehaviour
 
     public void Dance()
     {
-        ResetAllTriggers();
-        animator.SetTrigger("Dance");
-        PlaySound(danceClip);
+        if (CanPerformAction())
+        {
+            ResetAllTriggers();
+            animator.SetTrigger("Dance");
+            PlaySound(danceClip);
+            UpdateLastActionTime();
+        }
     }
 
     public void Wave()
     {
-        ResetAllTriggers();
-        animator.SetTrigger("Wave");
-        PlaySound(waveClip);
+        if (CanPerformAction())
+        {
+            ResetAllTriggers();
+            animator.SetTrigger("Wave");
+            PlaySound(waveClip);
+            UpdateLastActionTime();
+        }
     }
 
     public void SitDown()
     {
-        ResetAllTriggers();
-        animator.SetTrigger("Sit");
+        if (CanPerformAction())
+        {
+            ResetAllTriggers();
+            animator.SetTrigger("Sit");
+            UpdateLastActionTime();
+        }
     }
 
     public void Spin()
     {
-        ResetAllTriggers();
-        animator.SetTrigger("Spin");
-        PlaySound(spinClip);
+        if (CanPerformAction())
+        {
+            ResetAllTriggers();
+            animator.SetTrigger("Spin");
+            PlaySound(spinClip);
+            UpdateLastActionTime();
+        }
     }
 
     private void PlaySound(AudioClip clip)
@@ -62,5 +84,15 @@ public class AnimationController : MonoBehaviour
         animator.ResetTrigger("Wave");
         animator.ResetTrigger("Sit");
         animator.ResetTrigger("Spin");
+    }
+
+    private bool CanPerformAction()
+    {
+        return Time.time >= lastActionTime + actionCooldown;
+    }
+
+    private void UpdateLastActionTime()
+    {
+        lastActionTime = Time.time;
     }
 }
